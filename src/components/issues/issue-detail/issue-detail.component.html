@@ -1,0 +1,29 @@
+<div class="container">
+	<h2 class="text-center mt-4">{{title}}</h2>
+	<div *ngIf="noComment">
+			<hr class="mt-5">
+			<h5  class="text-center col-md-8 offset-2 bg-yellow-green">There's no comment for this issue yet...</h5>
+			<hr>
+	</div>
+	<div *ngFor="let comment of comments" class="card bg-light mt-3">
+		<div class="card-body">
+			<div class="row">
+			</div>
+			<div class="card card-inner">
+				<div class="card-body">
+					<div class="row">
+						<div class="col-md-2">
+							<img [src]="comment.node.author.avatarUrl != null ? comment.node.author.avatarUrl: defaultAuthorUrlImg"
+								class="img img-thumbnail img-fluid" />
+						</div>
+						<div class="col-md-10">
+							<p><strong>{{comment.node.author.login}}</strong></p>
+							<p>{{comment.node.body}}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<button *ngIf="hasNextPage" (click)="fetchMoreComments()" class="col-xs-6 col-lg-4 offset-lg-4 mb-3 mt-3 btn btn-primary">Load more comments</button>
+</div>

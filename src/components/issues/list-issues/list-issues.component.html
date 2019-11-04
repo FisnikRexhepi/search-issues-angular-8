@@ -1,0 +1,16 @@
+<h4 *ngIf="issuesData && issuesData.length == 0" class="col-md-4 offset-4 bg-yellow-green text-center mt-5" >
+  No found data yet ...!
+</h4>
+<div *ngIf="issuesData" class="listIssues ml-2 mr-2 mt-1">
+    <span *ngFor="let issue of issuesData" routerLink="issues/details/{{issue.node.number}}" class="list-group-item list-group-item-action flex-column align-items-start">
+      <div  class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1 b">{{issue.node.title}}</h5>
+      </div>
+      <small class="bg-gray">Status: </small> <small [style.color]="issue.node.state === 'OPEN' ? 'green' : 'red' ">{{issue.node.state}}</small>
+      <p class="float-right btn ml-2"><i class="fa fa-comment"></i> {{issue.node.comments.totalCount}}</p>
+    </span>
+</div>
+
+
+
+

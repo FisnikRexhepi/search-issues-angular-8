@@ -1,0 +1,40 @@
+.bg-gray{
+    color: gray;
+}
+
+.bg-green{
+    color: green !important;
+}
+
+.bg-yellow-green{
+    color: yellowgreen !important;
+}
+
+.bg-red{
+    color: red !important;
+}
+
+.listIssues{
+    border: none;
+    padding: 5px;
+    height: 494px;
+    overflow: auto;
+}
+
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+width: 20px;
+height: 12px;
+}
+
+::-webkit-scrollbar-track {
+border: 1px solid #008CBA;
+border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+background: #008CBA;  
+border-radius: 10px;
+}
+
