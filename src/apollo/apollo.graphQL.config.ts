@@ -20,7 +20,7 @@ import {setContext} from 'apollo-link-context';
   export class GraphQLModule {
 
      apiUrl ="https://api.github.com/graphql";
-     token = "a8fe9b871947f81df16ac8ca5a94d5ecabd5b30d";
+     token = "7ca60a0d537f71156f50469eed29705179dcdb53";
     constructor(apollo: Apollo) {
 
       const httpLink = createHttpLink({
