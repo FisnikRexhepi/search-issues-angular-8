@@ -20,13 +20,13 @@ import {setContext} from 'apollo-link-context';
   export class GraphQLModule {
 
      apiUrl ="https://api.github.com/graphql";
-     token = "7ca60a0d537f71156f50469eed29705179dcdb53";
+     token = "f5aa860efd658cccb79423abaf101461cdd05ec8";
     constructor(apollo: Apollo) {
 
       const httpLink = createHttpLink({
         uri: this.apiUrl,
       });
-      
+
       const authLink = setContext((_, { headers }) => {
         // get the authentication token from environment
         const token = this.token;
@@ -38,7 +38,7 @@ import {setContext} from 'apollo-link-context';
           }
         }
       });
-  
+
       apollo.create({
         link: authLink.concat(httpLink),
         cache: new InMemoryCache({
